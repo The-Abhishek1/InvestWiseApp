@@ -34,7 +34,7 @@ async function Stocks() {
   console.log(data);
 }
 
-Stocks();
+// Stocks();
 
 //ETF'S Data
 async function ETFS() {
@@ -43,7 +43,7 @@ async function ETFS() {
   console.log(data);
 }
 
-ETFS();
+// ETFS();
 
 //Indices Data
 async function Indices() {
@@ -52,7 +52,7 @@ async function Indices() {
   console.log(data);
 }
 
-Indices();
+// Indices();
 
 // let params = {
 //   symbol: "SUPARSHAKT:BSE",
