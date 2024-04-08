@@ -399,22 +399,20 @@ const styles = StyleSheet.create({
     width: 30,
   },
   box4buttontouch2: {
-    borderColor: "black",
-    borderWidth: 1,
     paddingTop: 5,
     paddingBottom: 5,
-    borderRadius: 15,
+    borderRadius: 10,
     paddingRight: 10,
     paddingLeft: 10,
     marginTop: 10,
+    borderWidth: 1,
   },
   box4buttontouch1: {
-    borderColor: "black",
-    borderWidth: 1,
     padding: 5,
     paddingRight: 10,
     paddingLeft: 10,
     borderRadius: 10,
+    borderWidth: 1,
   },
   box4smallbutton: {
     display: "flex",
@@ -425,7 +423,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
   },
   box4button2: {
-    fontSize: 13,
+    fontSize: 16,
   },
   box4button: {
     display: "flex",
@@ -436,7 +434,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
   },
   box4button1: {
-    fontSize: 15,
+    fontSize: 18,
     fontWeight: "bold",
   },
   box4: {
