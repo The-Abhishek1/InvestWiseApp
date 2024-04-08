@@ -7,123 +7,163 @@ import {
   Button,
   Pressable,
   Alert,
+  TextInput,
+  StyleSheet,
+  StatusBar,
 } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { supabase } from "../SupaBase/SupabaseConfig";
+import { SafeAreaView } from "react-native-safe-area-context";
 
+//Main Function
 export default function Signup() {
   const navigation = useNavigation();
-  const signWithGoogle = async () => {
+  const homeScreen = async () => {
     navigation.navigate("Home");
   };
   return (
-    <View style={{ backgroundColor: "aliceblue", height: "100%" }}>
-      <Text style={{ textAlign: "center", fontSize: 25, marginTop: 200 }}>
-        Join NexGen Coders
-      </Text>
+    <SafeAreaView>
+      <StatusBar backgroundColor="#d6fbff" barStyle="dark-content" />
       <View
         style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          marginTop: 70,
-          gap: 30,
+          backgroundColor: "aliceblue",
+          height: "100%",
+          paddingBottom: 20,
         }}
       >
-        <TouchableOpacity
+        <Text
           style={{
-            display: "flex",
-            flexDirection: "row",
-            gap: 10,
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "#fff",
-            width: Dimensions.get("screen").width * 0.6,
-            borderRadius: 100,
-            paddingBottom: 10,
-            paddingRight: 17,
-            paddingTop: 10,
+            textAlign: "center",
+            fontWeight: "bold",
+            fontSize: 25,
+            marginTop: 150,
           }}
         >
-          <Image
-            source={require("../Images/github.png")}
-            style={{ width: 32, height: 32, borderRadius: 100 }}
-          />
-          <Text>Signup with Github</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
+          Join InvestWise
+        </Text>
+        <View
           style={{
             display: "flex",
-            flexDirection: "row",
-            gap: 10,
+            flexDirection: "column",
             alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "#fff",
-            width: Dimensions.get("screen").width * 0.6,
-            borderRadius: 100,
-            paddingBottom: 10,
-            paddingTop: 10,
-            paddingRight: 19,
+            marginTop: 40,
+            gap: 10,
           }}
-          onPress={signWithGoogle}
         >
-          <Image
-            source={require("../Images/google.png")}
-            style={{ width: 32, height: 32 }}
-          />
-          <Text>Signup with Google</Text>
-        </TouchableOpacity>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              gap: 15,
+            }}
+          >
+            <TextInput
+              style={styles.inputs}
+              placeholder="Full name"
+            ></TextInput>
+            <TextInput style={styles.inputs} placeholder="Email"></TextInput>
+            <TextInput style={styles.inputs} placeholder="Password"></TextInput>
+          </View>
+          <TouchableOpacity
+            onPress={homeScreen}
+            style={{
+              width: Dimensions.get("screen").width * 0.7,
+              backgroundColor: "#0269b8",
+              borderRadius: 30,
+              padding: 10,
+              marginTop: 20,
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "center",
+                fontWeight: "bold",
+                fontSize: 20,
+                color: "white",
+              }}
+            >
+              Signup
+            </Text>
+          </TouchableOpacity>
+          <Text style={{ fontSize: 20, fontWeight: "bold" }}>OR</Text>
+          <TouchableOpacity
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 10,
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "#fff",
+              width: Dimensions.get("screen").width * 0.7,
+              borderRadius: 100,
+              paddingBottom: 10,
+              paddingTop: 10,
+              paddingRight: 19,
+            }}
+            onPress={homeScreen}
+          >
+            <Image
+              source={require("../Images/google.png")}
+              style={{ width: 32, height: 32 }}
+            />
+            <Text style={{ fontSize: 16 }}>Signup with Google</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity
+          <View style={{ display: "flex", flexDirection: "row" }}>
+            <Text style={{ fontSize: 15, color: "gray" }}>
+              Already have an Account?{" "}
+            </Text>
+            <Pressable onPress={() => navigation.navigate("Login")}>
+              <Text
+                style={{ color: "green", fontWeight: "bold", fontSize: 15 }}
+              >
+                Sign in
+              </Text>
+            </Pressable>
+          </View>
+        </View>
+        <View
           style={{
+            padding: 20,
+            lineHeight: 20,
+            paddingHorizontal: 30,
+            textAlign: "center",
+            color: "grey",
             display: "flex",
             flexDirection: "row",
-            gap: 10,
+            flexWrap: "wrap",
+            gap: 2,
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "#fff",
-            width: Dimensions.get("screen").width * 0.6,
-            borderRadius: 100,
-            paddingBottom: 10,
-            paddingTop: 10,
-            paddingRight: 3,
           }}
         >
-          <Image
-            source={require("../Images/facebook.png")}
-            style={{ width: 32, height: 32 }}
-          />
-          <Text>Signup with Facebook</Text>
-        </TouchableOpacity>
-        <View style={{ display: "flex", flexDirection: "row" }}>
-          <Text>Already have an Account? </Text>
-          <Pressable onPress={() => navigation.navigate("Login")}>
-            <Text style={{ color: "green", fontWeight: "bold" }}>Sign in</Text>
-          </Pressable>
+          <Text style={{ textAlign: "center" }}>
+            {" "}
+            Click "Sign Up" to agree to InvestWise{" "}
+            <Text style={{ textDecorationLine: "underline" }}>
+              Term's of Service
+            </Text>
+            <Text> and acknowledge that InvestWise </Text>
+            <Text style={{ textDecorationLine: "underline" }}>
+              Privacy Policy{" "}
+            </Text>
+            <Text>applies to you</Text>
+          </Text>
         </View>
       </View>
-      <Text
-        style={{
-          padding: 20,
-          lineHeight: 20,
-          textAlign: "center",
-          marginTop: 100,
-          color: "grey",
-        }}
-      >
-        Click "Sign Up" to agree to NexGen Coder's
-        <Text style={{ textDecorationLine: "underline" }}>
-          {" "}
-          Term's of Service
-        </Text>
-        <Text> and acknowledge that NexGen Coder's </Text>
-        <Text style={{ textDecorationLine: "underline" }}>
-          {" "}
-          Privacy Policy{" "}
-        </Text>
-        applies to you
-      </Text>
-    </View>
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  inputs: {
+    backgroundColor: "white",
+    padding: 10,
+    width: Dimensions.get("screen").width * 0.7,
+    borderRadius: 330,
+    fontSize: 17,
+    paddingLeft: 30,
+  },
+});

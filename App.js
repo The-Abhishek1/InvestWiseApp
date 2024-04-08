@@ -17,13 +17,14 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Foundation } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import WatchListTabBar from "./App/Screens/WatchListTabBar";
+import WelcomePage from "./App/Screens/WelcomePage";
 
 function TabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
-          if (route.name === "Home") {
+          if (route.name === "HomeScreen") {
             return <FontAwesome name="home" size={24} color="black" />;
           } else if (route.name === "WatchList") {
             return (
@@ -51,7 +52,11 @@ function TabNavigator() {
         },
       })}
     >
-      <Tab.Screen name="Home" options={{ title: "Home" }} component={Home} />
+      <Tab.Screen
+        name="HomeScreen"
+        options={{ title: "Home" }}
+        component={Home}
+      />
       <Tab.Screen
         name="WatchList"
         options={{
@@ -83,7 +88,8 @@ function TabNavigator() {
 function StackNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="HomeScreen" component={TabNavigator} />
+      <Stack.Screen name="Welcome" component={WelcomePage} />
+      <Stack.Screen name="Home" component={TabNavigator} />
       <Stack.Screen name="Signup" component={Signup} />
       <Stack.Screen name="Login" component={Login} />
     </Stack.Navigator>

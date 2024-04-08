@@ -22,7 +22,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function Profile() {
   const navigation = useNavigation();
   const logout = () => {
-    navigation.navigate("Signup");
+    navigation.navigate("Login");
   };
   return (
     <SafeAreaView>
