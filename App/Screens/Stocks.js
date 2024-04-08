@@ -44,7 +44,7 @@ export default function Stocks() {
                 {
                   key: "BANK NIFTY",
                   marketValue: "47,337.65",
-                  highLow: "-507.85(1.06%)",
+                  highLow: "507.85(1.06%)",
                 },
                 {
                   key: "FINNIFTY",
@@ -71,8 +71,6 @@ export default function Stocks() {
                     borderRadius: 10,
                     marginTop: 10,
                     marginLeft: 20,
-                    borderColor: "gray",
-                    borderWidth: 1,
                   }}
                 >
                   <Text style={{ fontSize: 12 }}>{item.key}</Text>
@@ -107,21 +105,21 @@ export default function Stocks() {
             <View style={styles.box2item}>
               <View style={styles.box2items}>
                 <Image
-                  source={require("../Images/google.png")}
+                  source={require("../Images/promotion.png")}
                   style={{ height: 30, width: 30 }}
                 />
                 <Text style={{ fontSize: 13 }}>IPO</Text>
               </View>
               <View style={styles.box2items}>
                 <Image
-                  source={require("../Images/github.png")}
+                  source={require("../Images/event.png")}
                   style={{ height: 30, width: 30 }}
                 />
                 <Text style={{ fontSize: 13 }}>Events</Text>
               </View>
               <View style={styles.box2items}>
                 <Image
-                  source={require("../Images/facebook.png")}
+                  source={require("../Images/bond.png")}
                   style={{ height: 30, width: 30 }}
                 />
                 <Text style={{ fontSize: 13 }}>All Stocks</Text>
@@ -327,7 +325,7 @@ const styles = StyleSheet.create({
   whole: {
     height: "auto",
     backgroundColor: "aliceblue",
-    paddingBottom: 60,
+    paddingBottom: 120,
   },
 
   footer: {
@@ -354,14 +352,12 @@ const styles = StyleSheet.create({
   stocknewsitems: {
     display: "flex",
     flexDirection: "column",
-    width: 150,
-    backgroundColor: "white",
-    borderColor: "gray",
-    borderWidth: 1,
+    gap: 10,
     padding: 10,
     paddingLeft: 20,
+    backgroundColor: "white",
+    width: Dimensions.get("screen").width * 0.4,
     borderRadius: 10,
-    gap: 10,
   },
   stocknews: {
     display: "flex",
@@ -391,13 +387,11 @@ const styles = StyleSheet.create({
   glboxitems: {
     display: "flex",
     flexDirection: "column",
-    gap: 10,
-    backgroundColor: "white",
-    borderColor: "gray",
-    borderWidth: 1,
-    padding: 10,
     paddingLeft: 20,
-    width: 150,
+    gap: 10,
+    padding: 10,
+    backgroundColor: "white",
+    width: Dimensions.get("screen").width * 0.4,
     borderRadius: 10,
   },
   glimg: {
@@ -420,7 +414,7 @@ const styles = StyleSheet.create({
     padding: 5,
     paddingRight: 10,
     paddingLeft: 10,
-    borderRadius: 15,
+    borderRadius: 10,
   },
   box4smallbutton: {
     display: "flex",
@@ -456,23 +450,20 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-around",
-    gap: 10,
-    paddingTop: 5,
-    paddingBottom: 5,
+    justifyContent: "space-between",
     padding: 10,
+    gap: 20,
+    paddingHorizontal: 20,
   },
   box2items: {
     backgroundColor: "white",
-    padding: 10,
     display: "flex",
     alignItems: "center",
     height: 75,
-    width: 85,
-    gap: 10,
     borderRadius: 10,
-    borderColor: "gray",
-    borderWidth: 1,
+    padding: 10,
+    gap: 10,
+    width: Dimensions.get("screen").width * 0.25,
   },
   box3text: {
     paddingTop: 10,
@@ -484,22 +475,21 @@ const styles = StyleSheet.create({
   box3item: {
     display: "flex",
     flexDirection: "row",
+    gap: 20,
+    padding: 10,
     flexWrap: "wrap",
     alignItems: "center",
     justifyContent: "center",
-    gap: 20,
   },
   box3items: {
     display: "flex",
     flexDirection: "column",
-    gap: 5,
-    backgroundColor: "white",
+    gap: 10,
     padding: 10,
-    width: 150,
+    backgroundColor: "white",
+    width: Dimensions.get("screen").width * 0.4,
     borderRadius: 10,
-    paddingLeft: 25,
-    borderColor: "gray",
-    borderWidth: 1,
+    paddingLeft: 20,
   },
   box3text1: {
     fontWeight: "bold",

@@ -3,246 +3,251 @@ import React from "react";
 import { ScrollView } from "react-native-gesture-handler";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
+import { SafeAreaView } from "react-native-safe-area-context";
 export default function Portfolio() {
   return (
-    <ScrollView>
-      <View style={styles.whole}>
-        <View style={styles.inside}>
-          <Text style={{ fontSize: 18, fontWeight: "bold", marginLeft: 20 }}>
-            Portfolio
-          </Text>
-          <View style={styles.portfolio}>
-            <View style={styles.values}>
-              <View style={styles.values1}>
-                <View style={styles.insideValues}>
-                  <Text style={{ color: "gray" }}>Current</Text>
-                  <Text>₹66.47</Text>
+    <SafeAreaView>
+      <ScrollView>
+        <View style={styles.whole}>
+          <View style={styles.inside}>
+            <Text style={{ fontSize: 18, fontWeight: "bold", marginLeft: 20 }}>
+              Portfolio
+            </Text>
+            <View style={styles.portfolio}>
+              <View style={styles.values}>
+                <View style={styles.values1}>
+                  <View style={styles.insideValues}>
+                    <Text style={{ color: "gray" }}>Current</Text>
+                    <Text>₹66.47</Text>
+                  </View>
+                  <View style={styles.insideValues}>
+                    <Text style={{ color: "gray" }}>Invested</Text>
+                    <Text>₹254.90</Text>
+                  </View>
                 </View>
-                <View style={styles.insideValues}>
-                  <Text style={{ color: "gray" }}>Invested</Text>
-                  <Text>₹254.90</Text>
+                <View style={styles.values1}>
+                  <View style={styles.insideValues}>
+                    <Text style={{ color: "gray" }}>Returns</Text>
+                    <Text style={{ color: "red" }}>₹188.43%</Text>
+                  </View>
+                  <View style={styles.insideValues}>
+                    <Text style={{ color: "gray" }}>Total returns</Text>
+                    <Text style={{ color: "red" }}>₹73.92%</Text>
+                  </View>
                 </View>
               </View>
-              <View style={styles.values1}>
-                <View style={styles.insideValues}>
+              <View style={styles.insights}>
+                <Image
+                  source={require("../Images/rocket.jpg")}
+                  style={styles.img}
+                />
+                <Text>Insights</Text>
+                <Text>
+                  Today <Text>-₹2.16(-0.85%)</Text>
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              alignItems: "center",
+              flexDirection: "row",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ textAlign: "center", margin: 10 }}>
+              Your investment returns may be indicative
+            </Text>
+            <MaterialCommunityIcons
+              name="alert-circle-outline"
+              size={24}
+              color="black"
+            />
+          </View>
+          <View style={styles.orderItems}>
+            <Text style={{ color: "gray", marginLeft: 10 }}>
+              Invested Stocks
+            </Text>
+            <View style={styles.box2}>
+              <View style={styles.valueNames}>
+                <View style={styles.insideValueNames1}>
+                  <Image
+                    source={require("../Images/github.png")}
+                    style={styles.img}
+                  />
+                  <Text
+                    style={{
+                      fontSize: 15,
+                    }}
+                  >
+                    Axie Infinity
+                  </Text>
+                </View>
+                <View style={styles.insideValueNames1}>
+                  <Text style={{ color: "gray" }}>0.03765 AXS</Text>
+                  <AntDesign name="caretright" size={10} color="black" />
+                </View>
+              </View>
+              <View style={styles.investedvalues}>
+                <View style={styles.valuesinside}>
                   <Text style={{ color: "gray" }}>Returns</Text>
-                  <Text style={{ color: "red" }}>₹188.43%</Text>
+                  <Text>₹164.33</Text>
                 </View>
-                <View style={styles.insideValues}>
-                  <Text style={{ color: "gray" }}>Total returns</Text>
-                  <Text style={{ color: "red" }}>₹73.92%</Text>
+                <View style={styles.valuesinside}>
+                  <Text style={{ color: "gray" }}>Current</Text>
+                  <Text>₹36.67</Text>
+                </View>
+                <View style={styles.valuesinside}>
+                  <Text style={{ color: "gray" }}>Invested</Text>
+                  <Text>₹201.00</Text>
                 </View>
               </View>
             </View>
-            <View style={styles.insights}>
-              <Image
-                source={require("../Images/rocket.jpg")}
-                style={styles.img}
-              />
-              <Text>Insights</Text>
-              <Text>
-                Today <Text>-₹2.16(-0.85%)</Text>
-              </Text>
-            </View>
-          </View>
-        </View>
-        <View
-          style={{
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "row",
-            justifyContent: "center",
-          }}
-        >
-          <Text style={{ textAlign: "center", margin: 10 }}>
-            Your investment returns may be indicative
-          </Text>
-          <MaterialCommunityIcons
-            name="alert-circle-outline"
-            size={24}
-            color="black"
-          />
-        </View>
-        <View style={styles.orderItems}>
-          <Text style={{ color: "gray", marginLeft: 10 }}>Invested Stocks</Text>
-          <View style={styles.box2}>
-            <View style={styles.valueNames}>
-              <View style={styles.insideValueNames1}>
-                <Image
-                  source={require("../Images/github.png")}
-                  style={styles.img}
-                />
-                <Text
-                  style={{
-                    fontSize: 15,
-                  }}
-                >
-                  Axie Infinity
-                </Text>
+            <View style={styles.box2}>
+              <View style={styles.valueNames}>
+                <View style={styles.insideValueNames1}>
+                  <Image
+                    source={require("../Images/github.png")}
+                    style={styles.img}
+                  />
+                  <Text
+                    style={{
+                      fontSize: 15,
+                    }}
+                  >
+                    Axie Infinity
+                  </Text>
+                </View>
+                <View style={styles.insideValueNames1}>
+                  <Text style={{ color: "gray" }}>0.03765 AXS</Text>
+                  <AntDesign name="caretright" size={10} color="black" />
+                </View>
               </View>
-              <View style={styles.insideValueNames1}>
-                <Text style={{ color: "gray" }}>0.03765 AXS</Text>
-                <AntDesign name="caretright" size={10} color="black" />
+              <View style={styles.investedvalues}>
+                <View style={styles.valuesinside}>
+                  <Text style={{ color: "gray" }}>Returns</Text>
+                  <Text>₹164.33</Text>
+                </View>
+                <View style={styles.valuesinside}>
+                  <Text style={{ color: "gray" }}>Current</Text>
+                  <Text>₹36.67</Text>
+                </View>
+                <View style={styles.valuesinside}>
+                  <Text style={{ color: "gray" }}>Invested</Text>
+                  <Text>₹201.00</Text>
+                </View>
               </View>
             </View>
-            <View style={styles.investedvalues}>
-              <View style={styles.valuesinside}>
-                <Text style={{ color: "gray" }}>Returns</Text>
-                <Text>₹164.33</Text>
+            <View style={styles.box2}>
+              <View style={styles.valueNames}>
+                <View style={styles.insideValueNames1}>
+                  <Image
+                    source={require("../Images/github.png")}
+                    style={styles.img}
+                  />
+                  <Text
+                    style={{
+                      fontSize: 15,
+                    }}
+                  >
+                    Axie Infinity
+                  </Text>
+                </View>
+                <View style={styles.insideValueNames1}>
+                  <Text style={{ color: "gray" }}>0.03765 AXS</Text>
+                  <AntDesign name="caretright" size={10} color="black" />
+                </View>
               </View>
-              <View style={styles.valuesinside}>
-                <Text style={{ color: "gray" }}>Current</Text>
-                <Text>₹36.67</Text>
-              </View>
-              <View style={styles.valuesinside}>
-                <Text style={{ color: "gray" }}>Invested</Text>
-                <Text>₹201.00</Text>
-              </View>
-            </View>
-          </View>
-          <View style={styles.box2}>
-            <View style={styles.valueNames}>
-              <View style={styles.insideValueNames1}>
-                <Image
-                  source={require("../Images/github.png")}
-                  style={styles.img}
-                />
-                <Text
-                  style={{
-                    fontSize: 15,
-                  }}
-                >
-                  Axie Infinity
-                </Text>
-              </View>
-              <View style={styles.insideValueNames1}>
-                <Text style={{ color: "gray" }}>0.03765 AXS</Text>
-                <AntDesign name="caretright" size={10} color="black" />
-              </View>
-            </View>
-            <View style={styles.investedvalues}>
-              <View style={styles.valuesinside}>
-                <Text style={{ color: "gray" }}>Returns</Text>
-                <Text>₹164.33</Text>
-              </View>
-              <View style={styles.valuesinside}>
-                <Text style={{ color: "gray" }}>Current</Text>
-                <Text>₹36.67</Text>
-              </View>
-              <View style={styles.valuesinside}>
-                <Text style={{ color: "gray" }}>Invested</Text>
-                <Text>₹201.00</Text>
+              <View style={styles.investedvalues}>
+                <View style={styles.valuesinside}>
+                  <Text style={{ color: "gray" }}>Returns</Text>
+                  <Text>₹164.33</Text>
+                </View>
+                <View style={styles.valuesinside}>
+                  <Text style={{ color: "gray" }}>Current</Text>
+                  <Text>₹36.67</Text>
+                </View>
+                <View style={styles.valuesinside}>
+                  <Text style={{ color: "gray" }}>Invested</Text>
+                  <Text>₹201.00</Text>
+                </View>
               </View>
             </View>
-          </View>
-          <View style={styles.box2}>
-            <View style={styles.valueNames}>
-              <View style={styles.insideValueNames1}>
-                <Image
-                  source={require("../Images/github.png")}
-                  style={styles.img}
-                />
-                <Text
-                  style={{
-                    fontSize: 15,
-                  }}
-                >
-                  Axie Infinity
-                </Text>
+            <View style={styles.box2}>
+              <View style={styles.valueNames}>
+                <View style={styles.insideValueNames1}>
+                  <Image
+                    source={require("../Images/github.png")}
+                    style={styles.img}
+                  />
+                  <Text
+                    style={{
+                      fontSize: 15,
+                    }}
+                  >
+                    Axie Infinity
+                  </Text>
+                </View>
+                <View style={styles.insideValueNames1}>
+                  <Text style={{ color: "gray" }}>0.03765 AXS</Text>
+                  <AntDesign name="caretright" size={10} color="black" />
+                </View>
               </View>
-              <View style={styles.insideValueNames1}>
-                <Text style={{ color: "gray" }}>0.03765 AXS</Text>
-                <AntDesign name="caretright" size={10} color="black" />
-              </View>
-            </View>
-            <View style={styles.investedvalues}>
-              <View style={styles.valuesinside}>
-                <Text style={{ color: "gray" }}>Returns</Text>
-                <Text>₹164.33</Text>
-              </View>
-              <View style={styles.valuesinside}>
-                <Text style={{ color: "gray" }}>Current</Text>
-                <Text>₹36.67</Text>
-              </View>
-              <View style={styles.valuesinside}>
-                <Text style={{ color: "gray" }}>Invested</Text>
-                <Text>₹201.00</Text>
-              </View>
-            </View>
-          </View>
-          <View style={styles.box2}>
-            <View style={styles.valueNames}>
-              <View style={styles.insideValueNames1}>
-                <Image
-                  source={require("../Images/github.png")}
-                  style={styles.img}
-                />
-                <Text
-                  style={{
-                    fontSize: 15,
-                  }}
-                >
-                  Axie Infinity
-                </Text>
-              </View>
-              <View style={styles.insideValueNames1}>
-                <Text style={{ color: "gray" }}>0.03765 AXS</Text>
-                <AntDesign name="caretright" size={10} color="black" />
+              <View style={styles.investedvalues}>
+                <View style={styles.valuesinside}>
+                  <Text style={{ color: "gray" }}>Returns</Text>
+                  <Text>₹164.33</Text>
+                </View>
+                <View style={styles.valuesinside}>
+                  <Text style={{ color: "gray" }}>Current</Text>
+                  <Text>₹36.67</Text>
+                </View>
+                <View style={styles.valuesinside}>
+                  <Text style={{ color: "gray" }}>Invested</Text>
+                  <Text>₹201.00</Text>
+                </View>
               </View>
             </View>
-            <View style={styles.investedvalues}>
-              <View style={styles.valuesinside}>
-                <Text style={{ color: "gray" }}>Returns</Text>
-                <Text>₹164.33</Text>
+            <View style={styles.box2}>
+              <View style={styles.valueNames}>
+                <View style={styles.insideValueNames1}>
+                  <Image
+                    source={require("../Images/github.png")}
+                    style={styles.img}
+                  />
+                  <Text
+                    style={{
+                      fontSize: 15,
+                    }}
+                  >
+                    Axie Infinity
+                  </Text>
+                </View>
+                <View style={styles.insideValueNames1}>
+                  <Text style={{ color: "gray" }}>0.03765 AXS</Text>
+                  <AntDesign name="caretright" size={10} color="black" />
+                </View>
               </View>
-              <View style={styles.valuesinside}>
-                <Text style={{ color: "gray" }}>Current</Text>
-                <Text>₹36.67</Text>
-              </View>
-              <View style={styles.valuesinside}>
-                <Text style={{ color: "gray" }}>Invested</Text>
-                <Text>₹201.00</Text>
-              </View>
-            </View>
-          </View>
-          <View style={styles.box2}>
-            <View style={styles.valueNames}>
-              <View style={styles.insideValueNames1}>
-                <Image
-                  source={require("../Images/github.png")}
-                  style={styles.img}
-                />
-                <Text
-                  style={{
-                    fontSize: 15,
-                  }}
-                >
-                  Axie Infinity
-                </Text>
-              </View>
-              <View style={styles.insideValueNames1}>
-                <Text style={{ color: "gray" }}>0.03765 AXS</Text>
-                <AntDesign name="caretright" size={10} color="black" />
-              </View>
-            </View>
-            <View style={styles.investedvalues}>
-              <View style={styles.valuesinside}>
-                <Text style={{ color: "gray" }}>Returns</Text>
-                <Text>₹164.33</Text>
-              </View>
-              <View style={styles.valuesinside}>
-                <Text style={{ color: "gray" }}>Current</Text>
-                <Text>₹36.67</Text>
-              </View>
-              <View style={styles.valuesinside}>
-                <Text style={{ color: "gray" }}>Invested</Text>
-                <Text>₹201.00</Text>
+              <View style={styles.investedvalues}>
+                <View style={styles.valuesinside}>
+                  <Text style={{ color: "gray" }}>Returns</Text>
+                  <Text>₹164.33</Text>
+                </View>
+                <View style={styles.valuesinside}>
+                  <Text style={{ color: "gray" }}>Current</Text>
+                  <Text>₹36.67</Text>
+                </View>
+                <View style={styles.valuesinside}>
+                  <Text style={{ color: "gray" }}>Invested</Text>
+                  <Text>₹201.00</Text>
+                </View>
               </View>
             </View>
           </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
@@ -343,6 +348,6 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   inside: {
-    marginTop: 30,
+    marginTop: 10,
   },
 });

@@ -1,25 +1,65 @@
-import { View, Text } from "react-native";
-import React, { useState } from "react";
-import NewsApi from "../NewsAPI/NewsAPI";
+import {
+  View,
+  Text,
+  Image,
+  FlatList,
+  SafeAreaView,
+  StyleSheet,
+  StatusBar,
+} from "react-native";
+import React, { useEffect, useState } from "react";
 
 //Main Function
 export default function News() {
-  const [newsAPI, setNewsAPI] = useState([]);
-  fetch(
-    "https://newsdata.io/api/1/news?apikey=pub_41479e008214f7ec60e909ab78d53e18781a3&q=pegasus&language=en"
-  )
-    .then((res) => res.json())
-    .then((data) => {
-      setNewsAPI(data);
-      console.log(data);
-    })
-    .catch((err) => console.log(err));
+  const [articles, setArticles] = useState([]);
+  const getArticles = async () => {
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/posts?_limit=10"
+    );
+    const data = await response.json();
+    setArticles(data);
+    console.log(articles);
+  };
+  useEffect(() => {
+    getArticles();
+  }, []);
 
   return (
-    <View>
-      {newsAPI.map((news) => (
-        <Text key={index}>{news.title}</Text>
-      ))}
+    <View style={{ height: "auto", padding: 10, paddingVertical: 20 }}>
+      <FlatList
+        data={articles}
+        renderItem={({ item }) => {
+          return (
+            <View
+              style={{
+                marginVertical: 5,
+                padding: 10,
+                display: "flex",
+                flexDirection: "column",
+                gap: 10,
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: 20,
+                  fontWeight: "bold",
+                  textTransform: "capitalize",
+                }}
+              >
+                {item.title}
+              </Text>
+              <Text>{item.body}</Text>
+            </View>
+          );
+        }}
+      />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 20,
+    height: "auto",
+  },
+});

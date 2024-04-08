@@ -14,53 +14,56 @@ import MutualFunds from "./MutualFunds";
 import FO from "./FO";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home() {
   const navigation = useNavigation();
   return (
-    <View style={{ backgroundColor: "aliceblue" }}>
-      <View style={{ backgroundColor: "aliceblue", marginTop: 30 }}>
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-            padding: 10,
-            marginTop: 0,
-            marginLeft: 10,
-            marginRight: 10,
-          }}
-        >
-          <Image
-            source={require("../Images/rocket.jpg")}
-            style={{ height: 35, width: 35, borderRadius: 100 }}
-          />
-          <TextInput
-            placeholder="Search"
+    <SafeAreaView>
+      <View style={{ backgroundColor: "aliceblue" }}>
+        <View style={{ backgroundColor: "aliceblue", marginTop: 10 }}>
+          <View
             style={{
-              borderColor: "grey",
-              width: 200,
-              height: 30,
-              borderRadius: 100,
-              textAlign: "center",
-              backgroundColor: "white",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+              padding: 10,
+              marginTop: 0,
+              marginLeft: 10,
+              marginRight: 10,
             }}
-          />
-          <View style={{ display: "flex", flexDirection: "row", gap: 10 }}>
-            <MaterialIcons name="add-alarm" size={24} color="black" />
-            <MaterialCommunityIcons
-              name="bell-ring-outline"
-              size={24}
-              color="black"
+          >
+            <Image
+              source={require("../Images/logo2.png")}
+              style={{ height: 35, width: 35, borderRadius: 100 }}
             />
+            <TextInput
+              placeholder="Search"
+              style={{
+                borderColor: "grey",
+                width: 200,
+                height: 30,
+                borderRadius: 100,
+                textAlign: "center",
+                backgroundColor: "white",
+              }}
+            />
+            <View style={{ display: "flex", flexDirection: "row", gap: 10 }}>
+              <MaterialIcons name="add-alarm" size={24} color="black" />
+              <MaterialCommunityIcons
+                name="bell-ring-outline"
+                size={24}
+                color="black"
+              />
+            </View>
+          </View>
+          <View style={{ height: "100%" }}>
+            <Top />
           </View>
         </View>
-        <View style={{ height: "100%" }}>
-          <Top />
-        </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 function Top() {
