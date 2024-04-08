@@ -122,7 +122,7 @@ export default function Orders() {
 
 const styles = StyleSheet.create({
   button: {
-    borderWidth: 0.3,
+    borderWidth: 1,
     padding: 5,
     borderRadius: 10,
     paddingLeft: 10,
