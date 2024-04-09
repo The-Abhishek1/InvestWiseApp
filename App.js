@@ -22,6 +22,14 @@ import WelcomePage from "./App/Screens/WelcomePage";
 function TabNavigator() {
   return (
     <Tab.Navigator
+      tabBarOptions={{
+        activeTintColor: "tomato",
+        inactiveTintColor: "gray",
+        tabBarActiveTintColor: "tomato",
+      }}
+      barStyle={{ backgroundColor: "aliceblue" }}
+      tabBarInactiveTintColor="green"
+      tabBarActiveTintColor="red"
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           if (route.name === "HomeScreen") {
@@ -54,7 +62,9 @@ function TabNavigator() {
     >
       <Tab.Screen
         name="HomeScreen"
-        options={{ title: "Home" }}
+        options={{
+          title: "Home",
+        }}
         component={Home}
       />
       <Tab.Screen

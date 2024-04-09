@@ -42,7 +42,7 @@ export default function Home() {
               placeholder="Search"
               style={{
                 borderColor: "grey",
-                width: 200,
+                width: Dimensions.get("screen").width * 0.6,
                 height: 30,
                 borderRadius: 100,
                 textAlign: "center",
