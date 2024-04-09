@@ -22,38 +22,33 @@ import WelcomePage from "./App/Screens/WelcomePage";
 function TabNavigator() {
   return (
     <Tab.Navigator
-      tabBarOptions={{
-        activeTintColor: "tomato",
-        inactiveTintColor: "gray",
-        tabBarActiveTintColor: "tomato",
-      }}
-      barStyle={{ backgroundColor: "aliceblue" }}
-      tabBarInactiveTintColor="green"
-      tabBarActiveTintColor="red"
+      inactiveColor="#91daff"
+      activeColor="#00aaff"
+      barStyle={{ backgroundColor: "white" }}
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           if (route.name === "HomeScreen") {
-            return <FontAwesome name="home" size={24} color="black" />;
+            return <FontAwesome name="home" size={24} color={color} />;
           } else if (route.name === "WatchList") {
             return (
               <MaterialCommunityIcons
                 name="folder-star-outline"
                 size={24}
-                color="black"
+                color={color}
               />
             );
           } else if (route.name === "Portfolio") {
-            return <AntDesign name="folderopen" size={24} color="black" />;
+            return <AntDesign name="folderopen" size={24} color={color} />;
           } else if (route.name === "Orders") {
             return (
-              <Foundation name="clipboard-notes" size={24} color="black" />
+              <Foundation name="clipboard-notes" size={24} color={color} />
             );
           } else if (route.name === "Profile") {
             return (
               <MaterialCommunityIcons
                 name="account-circle-outline"
                 size={24}
-                color="black"
+                color={color}
               />
             );
           }
