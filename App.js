@@ -18,13 +18,16 @@ import { Foundation } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import WatchListTabBar from "./App/Screens/WatchListTabBar";
 import WelcomePage from "./App/Screens/WelcomePage";
+import AccountInfo from "./App/Components/AccountInfo";
 
 function TabNavigator() {
   return (
     <Tab.Navigator
-      inactiveColor="#91daff"
-      activeColor="#00aaff"
-      barStyle={{ backgroundColor: "white" }}
+      inactiveColor="#5987ab"
+      activeColor="#0065b3"
+      barStyle={{
+        backgroundColor: "white",
+      }}
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           if (route.name === "HomeScreen") {
@@ -97,6 +100,7 @@ function StackNavigator() {
       <Stack.Screen name="Home" component={TabNavigator} />
       <Stack.Screen name="Signup" component={Signup} />
       <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="AccountInfo" component={AccountInfo} />
     </Stack.Navigator>
   );
 }

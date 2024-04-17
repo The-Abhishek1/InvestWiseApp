@@ -91,7 +91,12 @@ export default function Profile() {
                 </Pressable>
               </View>
             </View>
-            <View style={styles.account}>
+            <Pressable
+              style={styles.account}
+              onPress={() => {
+                navigation.navigate("AccountInfo");
+              }}
+            >
               <MaterialCommunityIcons
                 name="account-circle"
                 size={30}
@@ -103,7 +108,7 @@ export default function Profile() {
                 </Text>
                 <Text>Client ID: A52393970</Text>
               </View>
-            </View>
+            </Pressable>
             <View style={styles.reports}>
               <View
                 style={{
