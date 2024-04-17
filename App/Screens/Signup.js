@@ -34,7 +34,7 @@ export default function Signup() {
 
   return (
     <SafeAreaView>
-      <StatusBar backgroundColor="#d6fbff" barStyle="dark-content" />
+      <StatusBar backgroundColor="aliceblue" barStyle="dark-content" />
       <View
         style={{
           backgroundColor: "aliceblue",

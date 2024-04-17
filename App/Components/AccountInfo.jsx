@@ -23,7 +23,7 @@ export default function AccountInfo() {
       const granted = await PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.CAMERA,
         {
-          title: "Cool Photo App Camera Permission",
+          title: "InvestWise App Camera Permission",
           message:
             "InvestWise App needs access to your camera " +
             "so you can change profile picture.",
@@ -41,9 +41,32 @@ export default function AccountInfo() {
       console.warn(err);
     }
   };
+
+  const readImages = async () => {
+    try {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS_READ_MEDIA_IMAGES,
+        {
+          title: "InvestWise App Camera Permission",
+          message:
+            "InvestWise App needs access to your files " +
+            "so you can change profile picture.",
+          buttonNeutral: "Ask Me Later",
+          buttonNegative: "Cancel",
+          buttonPositive: "OK",
+        }
+      );
+      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+        console.log("You can choose the files");
+      } else {
+        console.log("Camera permission denied");
+      }
+    } catch (err) {
+      console.warn(err);
+    }
+  };
   return (
     <SafeAreaView>
-      <StatusBar backgroundColor="#d6fbff" barStyle="dark-content" />
       <View style={styles.container}>
         <View style={styles.top}>
           <Pressable
@@ -66,7 +89,8 @@ export default function AccountInfo() {
               </View>
             </View>
             <View style={styles.topInfo}>
-              <View
+              <Pressable
+                onPress={readImages}
                 style={{
                   borderWidth: 1.5,
                   borderRadius: 100,
@@ -78,7 +102,7 @@ export default function AccountInfo() {
                   style={styles.image}
                   source={require("../Images/Screenshot_20230606_151222.jpg")}
                 />
-              </View>
+              </Pressable>
               <Pressable style={styles.camera} onPress={imgChange}>
                 <Feather name="camera" size={20} color="white" />
               </Pressable>
@@ -96,6 +120,7 @@ const styles = StyleSheet.create({
     minHeight: Dimensions.get("screen").height * 1,
     paddingHorizontal: 10,
     paddingVertical: 30,
+    paddingTop: 20,
     backgroundColor: "aliceblue",
   },
   top: {

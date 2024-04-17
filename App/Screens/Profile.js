@@ -26,6 +26,27 @@ export default function Profile() {
     navigation.navigate("Login");
   };
 
+  //Function For Sharing
+  const onShare = async () => {
+    try {
+      const result = await Share.share({
+        title: "InvestWise App Referal",
+        message: "Share InvestWise to your friends to get 200₹",
+      });
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // shared with activity type of result.activityType
+        } else {
+          // shared
+        }
+      } else if (result.action === Share.dismissedAction) {
+        // dismissed
+      }
+    } catch (error) {
+      Alert.alert(error.message);
+    }
+  };
+
   return (
     <SafeAreaView>
       <ScrollView>
@@ -38,7 +59,7 @@ export default function Profile() {
             <View style={styles.top}>
               <Text style={styles.toptext}>Your Account</Text>
               <View style={styles.topinside}>
-                <Pressable style={styles.refer}>
+                <Pressable style={styles.refer} onPress={onShare}>
                   <Image
                     source={require("../Images/gift.png")}
                     style={{ height: 25, width: 25 }}

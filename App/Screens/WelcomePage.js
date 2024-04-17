@@ -23,7 +23,7 @@ export default function WelcomePage() {
   {
     return (
       <SafeAreaView>
-        <StatusBar backgroundColor="#d6fbff" barStyle="dark-content" />
+        <StatusBar backgroundColor="aliceblue" barStyle="dark-content" />
 
         <View style={styles.container}>
           <View
