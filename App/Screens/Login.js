@@ -10,6 +10,7 @@ import {
   TextInput,
   StyleSheet,
   StatusBar,
+  ToastAndroid,
 } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
@@ -17,9 +18,15 @@ import { supabase } from "../SupaBase/SupabaseConfig";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Login() {
+  //Navaigation
   const navigation = useNavigation();
   const homeScreen = async () => {
     navigation.navigate("Home");
+    ToastAndroid.show(
+      "Login Successful!!",
+      ToastAndroid.LONG,
+      ToastAndroid.CENTER
+    );
   };
   return (
     <SafeAreaView>

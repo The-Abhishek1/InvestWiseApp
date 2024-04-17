@@ -58,10 +58,17 @@ export default function AccountInfo() {
         </View>
         <View style={styles.profileInfo}>
           <View style={styles.infoContainer}>
+            <View style={styles.userInfo}>
+              <Text style={styles.userName}>Abhishek N</Text>
+              <View style={styles.client}>
+                <Text style={styles.clientID}>Client ID - </Text>
+                <Text style={styles.clientID}>A52393970</Text>
+              </View>
+            </View>
             <View style={styles.topInfo}>
               <View
                 style={{
-                  borderWidth: 1,
+                  borderWidth: 1.5,
                   borderRadius: 100,
                   borderColor: "gray",
                   padding: 2,
@@ -69,7 +76,7 @@ export default function AccountInfo() {
               >
                 <Image
                   style={styles.image}
-                  source={require("../Images/IMG_20230409_204334_535.jpg")}
+                  source={require("../Images/Screenshot_20230606_151222.jpg")}
                 />
               </View>
               <Pressable style={styles.camera} onPress={imgChange}>
@@ -77,6 +84,7 @@ export default function AccountInfo() {
               </Pressable>
             </View>
           </View>
+          <View></View>
         </View>
       </View>
     </SafeAreaView>
@@ -88,6 +96,7 @@ const styles = StyleSheet.create({
     minHeight: Dimensions.get("screen").height * 1,
     paddingHorizontal: 10,
     paddingVertical: 30,
+    backgroundColor: "aliceblue",
   },
   top: {
     display: "flex",
@@ -103,13 +112,17 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     gap: 10,
     alignItems: "center",
+    position: "relative",
+    top: 50,
   },
   topInfo: {
     display: "flex",
     alignItems: "center",
-    position: "relative",
+    position: "absolute",
+    top: -50,
     justifyContent: "center",
     width: Dimensions.get("screen").width * 0.3,
+    zIndex: 1,
   },
   image: {
     borderRadius: 100,
@@ -126,5 +139,29 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 2,
     right: 15,
+  },
+  userInfo: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 10,
+    alignItems: "center",
+    backgroundColor: "white",
+    width: Dimensions.get("screen").width * 1,
+    paddingVertical: 20,
+    paddingTop: 70,
+  },
+  userName: {
+    fontWeight: "600",
+    fontSize: 20,
+    textTransform: "uppercase",
+  },
+  client: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  clientID: {
+    fontSize: 16,
+    textTransform: "uppercase",
   },
 });

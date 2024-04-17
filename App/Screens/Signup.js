@@ -19,10 +19,19 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 //Main Function
 export default function Signup() {
+  //Navigation Variable
   const navigation = useNavigation();
+
+  //Function to navigate to HomeScreen
   const homeScreen = async () => {
     navigation.navigate("Home");
+    ToastAndroid.show(
+      "SignUp Successful!!",
+      ToastAndroid.LONG,
+      ToastAndroid.CENTER
+    );
   };
+
   return (
     <SafeAreaView>
       <StatusBar backgroundColor="#d6fbff" barStyle="dark-content" />
