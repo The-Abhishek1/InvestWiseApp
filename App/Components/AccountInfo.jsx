@@ -7,6 +7,7 @@ import {
   Image,
   Pressable,
   PermissionsAndroid,
+  ScrollView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
@@ -75,156 +76,164 @@ export default function AccountInfo() {
     }
   };
   return (
-    <SafeAreaView>
-      <View style={styles.container}>
-        <View style={styles.top}>
-          <Pressable
-            onPress={() => {
-              navigation.navigate("Profile");
-            }}
-          >
-            <Ionicons name="arrow-back-outline" size={27} color="black" />
-          </Pressable>
-
-          <Text style={styles.topText}>Profile</Text>
-        </View>
-        <View style={styles.profileInfo}>
-          <View style={styles.infoContainer}>
-            <View style={styles.userInfo}>
-              <Text style={styles.userName}>Abhishek N</Text>
-              <View style={styles.client}>
-                <Text style={styles.clientID}>Client ID - </Text>
-                <Text style={styles.clientID}>A52393970</Text>
-              </View>
-            </View>
-            <View style={styles.topInfo}>
-              <Pressable
-                onPress={readImages}
-                style={{
-                  borderWidth: 1.5,
-                  borderRadius: 100,
-                  borderColor: "gray",
-                  padding: 2,
-                }}
-              >
-                <Image
-                  style={styles.image}
-                  source={require("../Images/Screenshot_20230606_151222.jpg")}
-                />
-              </Pressable>
-              <Pressable style={styles.camera} onPress={imgChange}>
-                <Feather name="camera" size={20} color="white" />
-              </Pressable>
-            </View>
-          </View>
-          <View style={styles.demat}>
-            <View
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                gap: 30,
+    <ScrollView>
+      <SafeAreaView>
+        <View style={styles.container}>
+          <View style={styles.top}>
+            <Pressable
+              onPress={() => {
+                navigation.navigate("Profile");
               }}
             >
-              <AntDesign name="Safety" size={24} color="black" />
-              <View style={styles.insideDemat}>
-                <Text style={styles.dematText}>Demat Account Number</Text>
-                <View style={styles.dematNoIcon}>
-                  <Text style={styles.dematNo}>1203 3201 8047 0567</Text>
-                  <MaterialIcons name="content-copy" size={24} color="blue" />
-                </View>
-              </View>
-            </View>
-            <Feather name="edit-3" size={24} color="gray" />
+              <Ionicons name="arrow-back-outline" size={27} color="black" />
+            </Pressable>
+
+            <Text style={styles.topText}>Profile</Text>
           </View>
-          <View
-            style={{
-              paddingHorizontal: 10,
-              paddingVertical: 20,
-              display: "flex",
-              flexDirection: "column",
-              gap: 20,
-              backgroundColor: "white",
-            }}
-          >
-            <Text style={{ fontSize: 18 }}>Personal Details</Text>
-            <View style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-              <View style={styles.details}>
-                <View style={styles.iconName}>
-                  <Ionicons name="call-outline" size={24} color="black" />
-                  <View style={styles.insideDetails}>
-                    <Text style={styles.dematText}>Mobile Number</Text>
-                    <Text style={styles.dematNo}>+916366652685</Text>
-                  </View>
+          <View style={styles.profileInfo}>
+            <View style={styles.infoContainer}>
+              <View style={styles.userInfo}>
+                <Text style={styles.userName}>Abhishek N</Text>
+                <View style={styles.client}>
+                  <Text style={styles.clientID}>Client ID - </Text>
+                  <Text style={styles.clientID}>A52393970</Text>
                 </View>
-                <Feather name="edit-3" size={24} color="gray" />
               </View>
-              <View style={styles.details}>
-                <View style={styles.iconName}>
-                  <Fontisto name="email" size={24} color="black" />
-                  <View style={styles.insideDetails}>
-                    <Text style={styles.dematText}>Email</Text>
-                    <Text style={styles.dematNo}>idiot63666@gamil.com</Text>
-                  </View>
-                </View>
-                <Feather name="edit-3" size={24} color="gray" />
-              </View>
-              <View style={styles.details}>
-                <View style={styles.iconName}>
-                  <MaterialCommunityIcons
-                    name="card-account-details-outline"
-                    size={24}
-                    color="black"
+              <View style={styles.topInfo}>
+                <Pressable
+                  onPress={readImages}
+                  style={{
+                    borderWidth: 1.5,
+                    borderRadius: 100,
+                    borderColor: "gray",
+                    padding: 2,
+                  }}
+                >
+                  <Image
+                    style={styles.image}
+                    source={require("../Images/Screenshot_20230606_151222.jpg")}
                   />
-                  <View style={styles.insideDetails}>
-                    <Text style={{ textTransform: "uppercase", color: "gray" }}>
-                      Pan Number
-                    </Text>
-                    <Text style={{ textTransform: "uppercase", fontSize: 17 }}>
-                      EVjpa6704b
-                    </Text>
-                  </View>
-                </View>
-              </View>
-              <View style={styles.details}>
-                <View style={styles.iconName}>
-                  <EvilIcons name="location" size={24} color="black" />
-                  <View style={styles.insideDetails}>
-                    <Text style={styles.dematText}>Location</Text>
-                    <Text
-                      style={{
-                        fontSize: 17,
-                        textTransform: "uppercase",
-                        lineHeight: 25,
-                      }}
-                    >
-                      Maralawadi Hobali Attiluppe ramanagara karnataka bengaluru
-                      karnataka india
-                    </Text>
-                  </View>
-                </View>
-                <Feather name="edit-3" size={24} color="gray" />
-              </View>
-              <View style={styles.details}>
-                <View style={styles.iconName}>
-                  <AntDesign name="copy1" size={24} color="black" />
-                  <View style={styles.insideDetails}>
-                    <Text style={{ fontWeight: "bold", fontSize: 17 }}>
-                      View All Categories
-                    </Text>
-                    <Text style={{ fontSize: 15, color: "gray" }}>
-                      view Nominee details,Activate DDPI,MTF,Request DIS Book
-                    </Text>
-                  </View>
-                </View>
-                <Entypo name="chevron-small-right" size={30} color="gray" />
+                </Pressable>
+                <Pressable style={styles.camera} onPress={imgChange}>
+                  <Feather name="camera" size={20} color="white" />
+                </Pressable>
               </View>
             </View>
+            <View style={styles.demat}>
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  gap: 30,
+                }}
+              >
+                <AntDesign name="Safety" size={24} color="black" />
+                <View style={styles.insideDemat}>
+                  <Text style={styles.dematText}>Demat Account Number</Text>
+                  <View style={styles.dematNoIcon}>
+                    <Text style={styles.dematNo}>1203 3201 8047 0567</Text>
+                    <MaterialIcons name="content-copy" size={24} color="blue" />
+                  </View>
+                </View>
+              </View>
+              <Feather name="edit-3" size={24} color="gray" />
+            </View>
+            <View
+              style={{
+                paddingHorizontal: 10,
+                paddingVertical: 20,
+                display: "flex",
+                flexDirection: "column",
+                gap: 20,
+                backgroundColor: "white",
+              }}
+            >
+              <Text style={{ fontSize: 18 }}>Personal Details</Text>
+              <View
+                style={{ display: "flex", flexDirection: "column", gap: 20 }}
+              >
+                <View style={styles.details}>
+                  <View style={styles.iconName}>
+                    <Ionicons name="call-outline" size={24} color="black" />
+                    <View style={styles.insideDetails}>
+                      <Text style={styles.dematText}>Mobile Number</Text>
+                      <Text style={styles.dematNo}>+916366652685</Text>
+                    </View>
+                  </View>
+                  <Feather name="edit-3" size={24} color="gray" />
+                </View>
+                <View style={styles.details}>
+                  <View style={styles.iconName}>
+                    <Fontisto name="email" size={24} color="black" />
+                    <View style={styles.insideDetails}>
+                      <Text style={styles.dematText}>Email</Text>
+                      <Text style={styles.dematNo}>idiot63666@gamil.com</Text>
+                    </View>
+                  </View>
+                  <Feather name="edit-3" size={24} color="gray" />
+                </View>
+                <View style={styles.details}>
+                  <View style={styles.iconName}>
+                    <MaterialCommunityIcons
+                      name="card-account-details-outline"
+                      size={24}
+                      color="black"
+                    />
+                    <View style={styles.insideDetails}>
+                      <Text
+                        style={{ textTransform: "uppercase", color: "gray" }}
+                      >
+                        Pan Number
+                      </Text>
+                      <Text
+                        style={{ textTransform: "uppercase", fontSize: 17 }}
+                      >
+                        EVjpa6704b
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <View style={styles.details}>
+                  <View style={styles.iconName}>
+                    <EvilIcons name="location" size={24} color="black" />
+                    <View style={styles.insideDetails}>
+                      <Text style={styles.dematText}>Location</Text>
+                      <Text
+                        style={{
+                          fontSize: 17,
+                          textTransform: "uppercase",
+                          lineHeight: 25,
+                        }}
+                      >
+                        Maralawadi Hobali Attiluppe ramanagara karnataka
+                        bengaluru karnataka india
+                      </Text>
+                    </View>
+                  </View>
+                  <Feather name="edit-3" size={24} color="gray" />
+                </View>
+                <View style={styles.details}>
+                  <View style={styles.iconName}>
+                    <AntDesign name="copy1" size={24} color="black" />
+                    <View style={styles.insideDetails}>
+                      <Text style={{ fontWeight: "bold", fontSize: 17 }}>
+                        View All Categories
+                      </Text>
+                      <Text style={{ fontSize: 15, color: "gray" }}>
+                        view Nominee details,Activate DDPI,MTF,Request DIS Book
+                      </Text>
+                    </View>
+                  </View>
+                  <Entypo name="chevron-small-right" size={30} color="gray" />
+                </View>
+              </View>
+            </View>
+            <View></View>
           </View>
-          <View></View>
         </View>
-      </View>
-    </SafeAreaView>
+      </SafeAreaView>
+    </ScrollView>
   );
 }
 
