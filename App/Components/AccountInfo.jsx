@@ -115,7 +115,7 @@ export default function AccountInfo() {
                   />
                 </Pressable>
                 <Pressable style={styles.camera} onPress={imgChange}>
-                  <Feather name="camera" size={20} color="white" />
+                  <Feather name="camera" size={18} color="white" />
                 </Pressable>
               </View>
             </View>
@@ -128,20 +128,20 @@ export default function AccountInfo() {
                   gap: 30,
                 }}
               >
-                <AntDesign name="Safety" size={24} color="black" />
+                <AntDesign name="Safety" size={20} color="black" />
                 <View style={styles.insideDemat}>
                   <Text style={styles.dematText}>Demat Account Number</Text>
                   <View style={styles.dematNoIcon}>
                     <Text style={styles.dematNo}>1203 3201 8047 0567</Text>
                     <MaterialIcons
                       name="content-copy"
-                      size={24}
+                      size={20}
                       color="#3f77e8"
                     />
                   </View>
                 </View>
               </View>
-              <Feather name="edit-3" size={24} color="gray" />
+              <Feather name="edit-3" size={18} color="gray" />
             </View>
             <View
               style={{
@@ -159,29 +159,29 @@ export default function AccountInfo() {
               >
                 <View style={styles.details}>
                   <View style={styles.iconName}>
-                    <Ionicons name="call-outline" size={24} color="black" />
+                    <Ionicons name="call-outline" size={20} color="black" />
                     <View style={styles.insideDetails}>
                       <Text style={styles.dematText}>Mobile Number</Text>
                       <Text style={styles.dematNo}>+916366652685</Text>
                     </View>
                   </View>
-                  <Feather name="edit-3" size={24} color="gray" />
+                  <Feather name="edit-3" size={20} color="gray" />
                 </View>
                 <View style={styles.details}>
                   <View style={styles.iconName}>
-                    <Fontisto name="email" size={24} color="black" />
+                    <Fontisto name="email" size={20} color="black" />
                     <View style={styles.insideDetails}>
                       <Text style={styles.dematText}>Email</Text>
                       <Text style={styles.dematNo}>idiot63666@gamil.com</Text>
                     </View>
                   </View>
-                  <Feather name="edit-3" size={24} color="gray" />
+                  <Feather name="edit-3" size={18} color="gray" />
                 </View>
                 <View style={styles.details}>
                   <View style={styles.iconName}>
                     <MaterialCommunityIcons
                       name="card-account-details-outline"
-                      size={24}
+                      size={20}
                       color="black"
                     />
                     <View style={styles.insideDetails}>
@@ -200,7 +200,12 @@ export default function AccountInfo() {
                 </View>
                 <View style={styles.details}>
                   <View style={styles.iconName}>
-                    <EvilIcons name="location" size={24} color="black" />
+                    <EvilIcons
+                      name="location"
+                      size={25}
+                      color="black"
+                      style={{ marginLeft: -5 }}
+                    />
                     <View style={styles.insideDetails}>
                       <Text style={styles.dematText}>Location</Text>
                       <Text
@@ -215,11 +220,11 @@ export default function AccountInfo() {
                       </Text>
                     </View>
                   </View>
-                  <Feather name="edit-3" size={24} color="gray" />
+                  <Feather name="edit-3" size={18} color="gray" />
                 </View>
                 <View style={styles.details}>
                   <View style={styles.iconName}>
-                    <AntDesign name="copy1" size={24} color="black" />
+                    <AntDesign name="copy1" size={20} color="black" />
                     <View style={styles.insideDetails}>
                       <Text style={{ fontWeight: "bold", fontSize: 17 }}>
                         View All Categories
@@ -229,7 +234,7 @@ export default function AccountInfo() {
                       </Text>
                     </View>
                   </View>
-                  <Entypo name="chevron-small-right" size={30} color="gray" />
+                  <Entypo name="chevron-small-right" size={25} color="gray" />
                 </View>
               </View>
             </View>

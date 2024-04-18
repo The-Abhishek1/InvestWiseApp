@@ -6,6 +6,8 @@ import {
   SafeAreaView,
   StyleSheet,
   StatusBar,
+  Dimensions,
+  ScrollView,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 
@@ -25,41 +27,36 @@ export default function News() {
   }, []);
 
   return (
-    <View style={{ height: "auto", padding: 10, paddingVertical: 20 }}>
-      <FlatList
-        data={articles}
-        renderItem={({ item }) => {
-          return (
-            <View
+    <FlatList
+      data={articles}
+      renderItem={({ item, index }) => {
+        return (
+          <View
+            style={{
+              marginVertical: 5,
+              padding: 10,
+              display: "flex",
+              flexDirection: "column",
+              gap: 10,
+              paddingBottom: index == articles.length - 1 ? 250 : 10,
+              margin: 10,
+            }}
+          >
+            <Text
               style={{
-                marginVertical: 5,
-                padding: 10,
-                display: "flex",
-                flexDirection: "column",
-                gap: 10,
+                fontSize: 20,
+                fontWeight: "bold",
+                textTransform: "capitalize",
               }}
             >
-              <Text
-                style={{
-                  fontSize: 20,
-                  fontWeight: "bold",
-                  textTransform: "capitalize",
-                }}
-              >
-                {item.title}
-              </Text>
-              <Text>{item.body}</Text>
-            </View>
-          );
-        }}
-      />
-    </View>
+              {item.title}
+            </Text>
+            <Text>{item.body}</Text>
+          </View>
+        );
+      }}
+    />
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-    height: "auto",
-  },
-});
+const styles = StyleSheet.create({});
