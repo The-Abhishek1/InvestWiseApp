@@ -6,6 +6,7 @@ import {
   Image,
   StatusBar,
   Share,
+  Dimensions,
 } from "react-native";
 import React from "react";
 import { ScrollView } from "react-native-gesture-handler";
@@ -153,6 +154,7 @@ export default function Profile() {
                       name="clipboard-notes"
                       size={24}
                       color="#0269b8"
+                      style={{ marginLeft: 5 }}
                     />
 
                     <View style={styles.itemsText}>
@@ -171,7 +173,9 @@ export default function Profile() {
                     <MaterialIcons name="analytics" size={24} color="#0269b8" />
                     <View style={styles.itemsText}>
                       <Text style={styles.text1}>Profit and Loss</Text>
-                      <Text style={styles.text2}>
+                      <Text
+                        style={{ width: Dimensions.get("screen").width * 0.6 }}
+                      >
                         Analysis profit and loss for your trades
                       </Text>
                     </View>
@@ -432,7 +436,6 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     gap: 30,
-
     padding: 10,
     marginTop: 20,
     borderRadius: 7,
@@ -441,6 +444,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
+    gap: 10,
     justifyContent: "space-between",
   },
   img: {
