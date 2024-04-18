@@ -133,7 +133,11 @@ export default function AccountInfo() {
                   <Text style={styles.dematText}>Demat Account Number</Text>
                   <View style={styles.dematNoIcon}>
                     <Text style={styles.dematNo}>1203 3201 8047 0567</Text>
-                    <MaterialIcons name="content-copy" size={24} color="blue" />
+                    <MaterialIcons
+                      name="content-copy"
+                      size={24}
+                      color="#3f77e8"
+                    />
                   </View>
                 </View>
               </View>
@@ -229,7 +233,38 @@ export default function AccountInfo() {
                 </View>
               </View>
             </View>
-            <View></View>
+            <View>
+              <Text>Bank Details</Text>
+              <View>
+                <View>
+                  <View
+                    style={{
+                      flex: 1,
+                      borderWidth: 1,
+                      width: 70,
+                      alignItems: "center",
+                      justifyContent: "center",
+                      paddingHorizontal: 20,
+                      borderColor: "gray",
+                      paddingVertical: 5,
+                    }}
+                  >
+                    <Image
+                      style={{ height: 40, width: 40 }}
+                      source={require("../Images/promotion.png")}
+                      alt=""
+                    />
+                  </View>
+                  <View>
+                    <View>
+                      <Text>Canara Bank</Text>
+                      <Text>0431320000009</Text>
+                    </View>
+                    <Text>Primary</Text>
+                  </View>
+                </View>
+              </View>
+            </View>
           </View>
         </View>
       </SafeAreaView>
